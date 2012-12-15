@@ -1,7 +1,19 @@
-/* 
+/*
 The original script for Google Analytics is provided by Justin Cutroni: http://cutroni.com/blog/2012/02/21/advanced-content-tracking-with-google-analytics-part-1/
 I modified the script and optimized it for the new analytics.js - Universal Analytics that Google Analytics is due to launch in 2013.
 Any suggestions for optimization are welcomed.
+
+++++ INSTRUCTIONS ++++
+The following custom dimensions and metrics are used in the script:
+dimension1 : lines 101 and 103
+metric1: line 111
+
+They are defined as follows in Google Analytics:
+dimension1 - Reader Type
+metric1 - Reading Time
+
+Chnage their IDs accordingly to your Google Analytics setup.
+
 */
 jQuery(function($) {
     // Debug flag
@@ -86,9 +98,9 @@ jQuery(function($) {
             timeToContentEnd = Math.round((contentScrollEnd - scrollStart) / 1000);
             if (!debugMode) {
                 if (timeToContentEnd < 60) {
-                    ga('set', 'dimension2', 'Scanner');
+                    ga('set', 'dimension1', 'Scanner');//set the dimension id defined in Google Analytics
                 } else {
-                    ga('set', 'dimension2', 'Reader');
+                    ga('set', 'dimension1', 'Reader');//set the dimension id defined in Google Analytics
                 }
                 
                 ga('send', {
@@ -96,7 +108,7 @@ jQuery(function($) {
                   eventCategory: 'Reading', 
                   eventAction: 'ContentBottom',
                   eventValue: timeToContentEnd,
-                  metric1:timeToContentEnd
+                  metric1:timeToContentEnd //set the metric id defined in Google Analytics
                 });
             } else {
                 alert('end content section '+timeToContentEnd);
@@ -133,3 +145,5 @@ jQuery(function($) {
         timer = setTimeout(trackLocation, callBackTime);
     });
 });
+
+
