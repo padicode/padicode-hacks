@@ -1,7 +1,7 @@
 /*
-The original script for Google Analytics is provided by Justin Cutroni: http://cutroni.com/blog/2012/02/21/advanced-content-tracking-with-google-analytics-part-1/
-I modified the script and optimized it for the new analytics.js - Universal Analytics that Google Analytics is due to launch in 2013.
-Any suggestions for optimization are welcomed.
+The original script for the current Google Analytics tracking code is provided by Justin Cutroni: http://cutroni.com/blog/2012/02/21/advanced-content-tracking-with-google-analytics-part-1/
+I modified the script to make it work with the new analytics.js - Universal Analytics that Google Analytics is due to launch in 2013.
+I also added minor changes to the logic. Any suggestions for optimization are welcomed.
 
 ++++ INSTRUCTIONS ++++
 The following custom dimensions and metrics are used in the script:
@@ -12,7 +12,7 @@ They are defined as follows in Google Analytics:
 dimension1 - Reader Type
 metric1 - Reading Time
 
-Chnage their IDs accordingly to your Google Analytics setup.
+DO NOT FORGET: Change the custom dimensions and metrics IDs accordingly to your Google Analytics setup.
 
 */
 jQuery(function($) {
